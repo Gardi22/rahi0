@@ -253,9 +253,12 @@
     .flashcard-img {
       max-width: 100%;
       max-height: 180px;
+      width: 300px;  /* Added specific width */
+      height: 200px; /* Added specific height */
       margin: 10px 0;
       border-radius: 8px;
       border: 1px solid rgba(0,0,0,0.1);
+      object-fit: contain; /* Maintains aspect ratio */
     }
     .flashcard-content {
       display: flex;
@@ -485,6 +488,8 @@
         img.src = card.questionImg;
         img.className = 'flashcard-img';
         img.alt = 'Question image';
+        img.style.width = '300px';   // Added specific width
+        img.style.height = '200px';  // Added specific height
         questionEl.appendChild(img);
       }
       
@@ -499,6 +504,8 @@
         img.src = card.answerImg;
         img.className = 'flashcard-img';
         img.alt = 'Answer image';
+        img.style.width = '300px';   // Added specific width
+        img.style.height = '200px';  // Added specific height
         answerEl.appendChild(img);
       }
       
@@ -584,3 +591,4 @@
   </script>
 </body>
 </html>
+``` 
