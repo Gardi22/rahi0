@@ -2,19 +2,740 @@
 const flashcardsDatabase = {
   'science': {
     'physics': [
-      {
-        question: "Solve this physics equation:",
-        questionImg: "./images/newtons-laws.png",  // Correct format
-        answer: "F = ma (Newton's Second Law)",
-        answerImg: "./images/free-body-diagram.png"  // Correct format
-      },
-      {
-        question: "What does this circuit diagram represent?",
-        questionImg: "./images/simple-circuit.png",  // Remove 'public/'
-        answer: "Simple circuit with resistor and voltage source",
-        answerImg: "./images/series-circuit.png"  // Remove 'public/'
-      }
-    ],
+      
+       
+  {
+    "question": "What is an electric circuit?",
+    "questionImg": "",
+    "answer": "An electric circuit is a closed path along which an electric current can flow.",
+    "answerImg": ""
+  },
+  {
+    "question": "List the three essential components of a simple electric circuit.",
+    "questionImg": "",
+    "answer": "A voltage source (e.g., battery), connecting wires, and an electric device (e.g., light bulb).",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw a simple circuit containing a battery, a wire, and a light bulb. Label all components.",
+    "questionImg": "",
+    "answer": "",
+    "answerImg": ".\images\Screenshot 2025-05-28 181658.png"
+  },
+  {
+    "question": "What is the voltage (potential difference) across a resistor of 5 Ω if the current flowing through it is 2 A?",
+    "questionImg": "",
+    "answer": "Using Ohm's Law: V = I × R = 2 A × 5 Ω = 10 V.",
+    "answerImg": ""
+  },
+  {
+    "question": "Write the equation for Ohm's Law and explain each symbol.",
+    "questionImg": "",
+    "answer": "V = I × R, where: V = Voltage (Volts), I = Current (Amperes), R = Resistance (Ohms).",
+    "answerImg": ""
+  },
+  {
+    "question": "What fraction represents the relationship between voltage and current in a circuit?",
+    "questionImg": "",
+    "answer": "The relationship is given by Ohm's Law: V / I = R.",
+    "answerImg": ""
+  },
+  {
+    "question": "If a circuit has a voltage of 12 V and a current of 3 A, what is the resistance?",
+    "questionImg": "",
+    "answer": "R = V / I = 12 V / 3 A = 4 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does a bulb turn on when connected in a closed circuit?",
+    "questionImg": "",
+    "answer": "Because current flows through the filament, heating it up and producing light.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the difference between an open and closed circuit?",
+    "questionImg": "",
+    "answer": "A closed circuit is a complete loop allowing current to flow, while an open circuit is broken and stops current flow.",
+    "answerImg": ""
+  },
+  {
+    "question": "Give one example of an open circuit and one of a closed circuit.",
+    "questionImg": "",
+    "answer": "Open: A flashlight with its switch turned off. Closed: A flashlight with its switch turned on.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does a bulb not light up in an open circuit?",
+    "questionImg": "",
+    "answer": "Because the path for current is broken, preventing flow through the bulb.",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens to current flow if a wire in a circuit is cut? Explain.",
+    "questionImg": "",
+    "answer": "Current stops flowing because the circuit becomes open (incomplete).",
+    "answerImg": ""
+  },
+  {
+    "question": "Identify whether the circuit is open or closed.",
+    "questionImg": ".\images\Diagram of a circuit with an open switch vs. closed switch.png",
+    "answer": "Left image (open switch): Open circuit (no current). Right image (closed switch): Closed circuit (current flows).",
+    "answerImg": ""
+  },
+  {
+    "question": "A circuit has a battery, wires, and a bulb, but the bulb does not light. List two possible reasons.",
+    "questionImg": "",
+    "answer": "The switch is open (open circuit). The bulb is burnt out (breaks the circuit).",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the function of a cell in a circuit?",
+    "questionImg": "",
+    "answer": "A cell converts chemical energy into electrical energy to power the circuit.",
+    "answerImg": ""
+  },
+  {
+    "question": "How is a battery different from a single cell?",
+    "questionImg": "",
+    "answer": "A battery consists of two or more cells connected in series to provide higher voltage.",
+    "answerImg": ""
+  },
+  {
+    "question": "What does the potential difference (p.d.) of a battery indicate?",
+    "questionImg": "",
+    "answer": "It measures the energy supplied per unit charge, in volts (V).",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw and label the symbol for a single cell and a battery of three cells and compare/check your answer.",
+    "questionImg": "",
+    "answer": "Single cell: Long line (+) and short thick line (–). Battery: Two or more cell symbols connected in series (e.g., |––|––|––|).",
+    "answerImg": ".\images\a single cell and a battery of three cells with labels.png"
+  },
+  {
+    "question": "Identify the terminals (positive/negative) in the given cell symbol.",
+    "questionImg": ".\images\Cell symbol with long and short lines.png",
+    "answer": "Long line = positive, short thick line = negative.",
+    "answerImg": ""
+  },
+  {
+    "question": "If three 1.5 V cells are connected in series, what is the total voltage of the battery?",
+    "questionImg": "",
+    "answer": "Total voltage = 1.5 V × 3 = 4.5 V.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the unit of potential difference?",
+    "questionImg": "",
+    "answer": "Volts (V).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do devices like flashlights use batteries instead of single cells?",
+    "questionImg": "",
+    "answer": "Batteries provide higher voltage by combining multiple cells, ensuring sufficient energy for the device.",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens if a cell is connected backward in a circuit (terminals reversed)?",
+    "questionImg": "",
+    "answer": "The current flows in the opposite direction, which may prevent the circuit from functioning properly.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the function of an ammeter, and how is it connected in a circuit?",
+    "questionImg": "",
+    "answer": "Measures current; connected in series. Symbol: ⓐ.",
+    "answerImg": ""
+  },
+  {
+    "question": "How is a voltmeter represented in a circuit diagram, and where is it placed?",
+    "questionImg": "",
+    "answer": "Symbol: Ⓥ; connected in parallel across components.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why are incandescent bulbs being replaced by LEDs?",
+    "questionImg": "",
+    "answer": "LEDs are more efficient (convert more energy to light, less to heat).",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw the circuit symbols for an ammeter, voltmeter, and light bulb. and check/compare your answer.",
+    "questionImg": "",
+    "answer": "Ammeter: ⓐ Voltmeter: Ⓥ Bulb: Circle with \"X\" or filament.",
+    "answerImg": ".\images\circuit symbols for an ammeter, voltmeter, and light bulb.png"
+  },
+  {
+    "question": "If an ammeter reads 2 A in a circuit, what does this indicate?",
+    "questionImg": "",
+    "answer": "The current flowing through the circuit is 2 amperes.",
+    "answerImg": ""
+  },
+  {
+    "question": "How would you measure the voltage across a bulb? Describe the setup.",
+    "questionImg": "",
+    "answer": "Connect a voltmeter in parallel across the bulb.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do wires in circuit diagrams have right-angled corners?",
+    "questionImg": "",
+    "answer": "For clarity and standardization, though real wires are flexible.",
+    "answerImg": ""
+  },
+  {
+    "question": "A circuit has a bulb, battery, and wires, but the bulb doesn’t light. List two tools you’d use to diagnose the problem.",
+    "questionImg": "",
+    "answer": "Ammeter to check if current is flowing. Voltmeter to test the battery’s voltage.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the purpose of a resistor in a circuit?",
+    "questionImg": "",
+    "answer": "To oppose current flow and convert electrical energy into heat (e.g., in toasters).",
+    "answerImg": ""
+  },
+  {
+    "question": "How does a switch control a circuit?",
+    "questionImg": "",
+    "answer": "It opens (stops current) or closes (allows current) the circuit.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does current flow instantly when a switch is closed?",
+    "questionImg": "",
+    "answer": "Electrons already in the wires begin moving immediately.",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw the symbols for a fixed resistor, variable resistor, and closed switch and compare/check your answer.",
+    "questionImg": "",
+    "answer": "Fixed resistor: Zigzag line (~~~~) or rectangle (▯). Variable resistor: Arrow through zigzag (~~/~). Closed switch: Straight line (no gap).",
+    "answerImg": ".\images\symbols.png"
+  },
+  {
+    "question": "Identify the resistor and switch in the circuit diagram.",
+    "questionImg": ".\images\Circuit with resistor and switch.png",
+    "answer": "Resistor: ~~~~ or ▯. Switch: Gap (open) or line (closed).",
+    "answerImg": ""
+  },
+  {
+    "question": "A circuit has 12 V and 3 A. What is the resistance?",
+    "questionImg": "",
+    "answer": "R = V / I = 12 V / 3 A = 4 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "If resistance increases, what happens to current (assuming voltage is constant)?",
+    "questionImg": "",
+    "answer": "Current decreases (Ohm’s Law: I = V / R).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do toasters and irons use resistors?",
+    "questionImg": "",
+    "answer": "Resistors convert electrical energy into heat for functionality.",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens if a switch is left open in a circuit with a bulb?",
+    "questionImg": "",
+    "answer": "The bulb won’t light (no current flow).",
+    "answerImg": ""
+  },
+  {
+    "question": "A circuit has a resistor, battery, and bulb. The bulb is dim. How can you increase its brightness?",
+    "questionImg": "",
+    "answer": "Reduce resistance (e.g., use a lower-resistance resistor). Increase voltage (e.g., add another battery in series).",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw and label the symbols for a cell, battery, and filament lamp.",
+    "questionImg": "",
+    "answer": "Cell: |– Battery: |––|––| Lamp: ⨀ or circle with \"X\".",
+    "answerImg": ".\images\Screenshot 2025-05-28 181658.png"
+  },
+  {
+    "question": "Why is a voltmeter connected in parallel, while an ammeter is in series?",
+    "questionImg": "",
+    "answer": "Voltmeter measures voltage across a component (parallel). Ammeter measures current through the circuit (series).",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens if a variable resistor’s resistance is increased in a circuit?",
+    "questionImg": "",
+    "answer": "Current decreases (Ohm’s Law: I = V / R).",
+    "answerImg": ""
+  },
+  {
+    "question": "A circuit diagram shows ⓐ and Ⓥ. Which measures current, and which measures voltage?",
+    "questionImg": "",
+    "answer": "ⓐ = Ammeter (current). Ⓥ = Voltmeter (voltage).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why are symbols used in circuit diagrams instead of realistic drawings?",
+    "questionImg": "",
+    "answer": "Symbols standardize representation for clarity and simplicity.",
+    "answerImg": ""
+  },
+  {
+    "question": "A circuit has a battery, bulb, and wires but doesn’t work. The diagram shows an open switch. How would you fix it?",
+    "questionImg": "",
+    "answer": "Close the switch to complete the circuit.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is potential difference, and how is it measured?",
+    "questionImg": "",
+    "answer": "Energy per unit charge to move electrons between points; measured in volts (V) with a voltmeter.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does a battery’s positive terminal have a higher potential than the negative terminal?",
+    "questionImg": "",
+    "answer": "Chemical reactions in the battery create an imbalance, forcing electrons to flow from low (negative) to high (positive) potential.",
+    "answerImg": ""
+  },
+  {
+    "question": "If 5 Joules of energy is used to move 2 Coulombs of charge, what is the p.d.?",
+    "questionImg": "",
+    "answer": "V = W / Q = 5 J / 2 C = 2.5 V.",
+    "answerImg": ""
+  },
+  {
+    "question": "A 12 V battery moves 3 C of charge. How much energy is released?",
+    "questionImg": "",
+    "answer": "W = V × Q = 12 V × 3 C = 36 J.",
+    "answerImg": ""
+  },
+  {
+    "question": "Label the higher and lower potential terminals in the battery symbol.",
+    "questionImg": ".\images\Cell symbol with long and short lines.png",
+    "answer": "Long line: Higher potential (+). Short line: Lower potential (–).",
+    "answerImg": ""
+  },
+  {
+    "question": "How does increasing the p.d. affect the brightness of a bulb? Explain.",
+    "questionImg": "",
+    "answer": "Brightness increases because more energy is released per charge (higher p.d. = more heat/light).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does a phone battery (3.7 V) release less energy per charge than a car battery (12 V)?",
+    "questionImg": "",
+    "answer": "The car battery has a greater p.d., supplying more energy per unit charge.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why must a voltmeter be connected in parallel?",
+    "questionImg": "",
+    "answer": "To measure the energy difference across a component without interrupting current flow.",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens if you reverse the voltmeter’s terminals?",
+    "questionImg": "",
+    "answer": "It shows a negative value (but magnitude remains correct).",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw how to measure a battery’s voltage.",
+    "questionImg": "",
+    "answer": "[Battery +] —— [Ⓥ +] [Battery –] —— [Ⓥ –]",
+    "answerImg": ".\images\measure voltage.png"
+  },
+  {
+    "question": "A voltmeter reads 0 V in a working circuit. Explain why.",
+    "questionImg": "",
+    "answer": "It’s connected to the same point (no potential difference) or either its is connected seris which is the wrong way.",
+    "answerImg": ""
+  },
+  {
+    "question": "How would you measure voltage across a resistor?",
+    "questionImg": "",
+    "answer": "Connect the voltmeter’s + to resistor’s input and – to output.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the voltage across two 1.5 V cells connected in series? Why?",
+    "questionImg": "",
+    "answer": "3 V; voltages add up in series.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does a voltmeter read 0 V when cells are connected in opposition?",
+    "questionImg": "",
+    "answer": "The voltages cancel each other out.",
+    "answerImg": ""
+  },
+  {
+    "question": "Three 2 V cells are connected in series. What is the total voltage?",
+    "questionImg": "",
+    "answer": "2 V + 2 V + 2 V = 6 V.",
+    "answerImg": ""
+  },
+  {
+    "question": "If two 1.5 V cells connected in opposition are used in a circuit, will the bulb light up? Explain.",
+    "questionImg": "",
+    "answer": "No, because the net voltage is 0 V (no current flows).",
+    "answerImg": ""
+  },
+  {
+    "question": "Identify the error in the circuit where a voltmeter reads 0 V despite working cells.",
+    "questionImg": ".\\images\\error placed volt meter.png",
+    "answer": "Cells are connected + to + (or – to –), and its in series.",
+    "answerImg": ""
+  },
+  {
+    "question": "How would you measure the voltage across a bulb in a live circuit?",
+    "questionImg": "",
+    "answer": "Connect the voltmeter in parallel across the bulb, matching + to + and – to –.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why is energy loss in wires assumed to be negligible?",
+    "questionImg": "",
+    "answer": "Wires have very low resistance compared to the bulb.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is electric current, and what unit is it measured in?",
+    "questionImg": "",
+    "answer": "Flow of charges; measured in amperes (A).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why must an ammeter be connected in series?",
+    "questionImg": "",
+    "answer": "To ensure the same current flows through both the ammeter and the component.",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens if an ammeter is connected in parallel?",
+    "questionImg": "",
+    "answer": "It creates a short circuit, potentially damaging the ammeter.",
+    "answerImg": ""
+  },
+  {
+    "question": "If 3 Coulombs of charge pass a point in 2 seconds, what is the current?",
+    "questionImg": "",
+    "answer": "I = Q / t = 3 C / 2 s = 1.5 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "An ammeter reads 0 A in a closed circuit with a bulb. Why?",
+    "questionImg": "",
+    "answer": "Possible open switch, broken wire, or dead battery or misplaced ammeter (parallel) should be series.",
+    "answerImg": ""
+  },
+  {
+    "question": "How does current direction differ from electron flow?",
+    "questionImg": "",
+    "answer": "Conventional current flows + to –; electrons flow – to +.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do all bulbs in a series circuit go out if one fails?",
+    "questionImg": "",
+    "answer": "The circuit is broken; current cannot flow through the open path.",
+    "answerImg": ""
+  },
+  {
+    "question": "How does adding more bulbs in series affect their brightness? Explain.",
+    "questionImg": "",
+    "answer": "Brightness decreases because voltage is shared among more bulbs (each gets less energy).",
+    "answerImg": ""
+  },
+  {
+    "question": "Three identical bulbs are connected in series to a 9 V battery. What is the voltage across each bulb?",
+    "questionImg": "",
+    "answer": "9 V / 3 = 3 V per bulb.",
+    "answerImg": ""
+  },
+  {
+    "question": "In a series circuit with a 12 V battery and two resistors (4 Ω and 2 Ω), what is the current?",
+    "questionImg": "",
+    "answer": "R total = 4 Ω + 2 Ω = 6 Ω. I = V / R = 12 V / 6 Ω = 2 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "Draw a series circuit with a battery, two bulbs, and an ammeter. Label current direction.",
+    "questionImg": "",
+    "answer": "[Battery +] —— [Bulb 1] —— [Bulb 2] —— [ⓐ] —— [Battery –] Current: + to – (conventional flow).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why are series circuits rarely used in household wiring?",
+    "questionImg": "",
+    "answer": "Failure of one device (e.g., lamp) would turn off all devices. Parallel circuits are preferred.",
+    "answerImg": ""
+  },
+  {
+    "question": "How would you test if a decorating bulb string is a series circuit?",
+    "questionImg": "",
+    "answer": "Remove one bulb; if all others go out, it’s a series circuit.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do household appliances use parallel circuits?",
+    "questionImg": "",
+    "answer": "Devices operate independently at full voltage; one failure doesn’t affect others.",
+    "answerImg": ""
+  },
+  {
+    "question": "In a series circuit, why does voltage divide but current stay constant?",
+    "questionImg": "",
+    "answer": "Energy is shared (voltage adds), while charge flow (current) is uniform.",
+    "answerImg": ""
+  },
+  {
+    "question": "Three 2 Ω resistors in series with a 6 V battery. Find current.",
+    "questionImg": "",
+    "answer": "R total = 2 + 2 + 2 = 6 Ω. I = V / R = 6 V / 6 Ω = 1 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "Two 4 Ω resistors in parallel with a 12 V battery. Find total current.",
+    "questionImg": "",
+    "answer": "1 / R total = 1 / 4 + 1 / 4 = 1 / 2. R total = 2 Ω. I = 12 V / 2 Ω = 6 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "How would you design a circuit where two bulbs shine brightly and a third can be turned off independently?",
+    "questionImg": "",
+    "answer": "Connect two bulbs in parallel and the third with a switch in series to one branch.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the voltage rule for series circuits?",
+    "questionImg": "",
+    "answer": "V total = V1 + V2 + ….",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do parallel circuits maintain brightness with added bulbs?",
+    "questionImg": "",
+    "answer": "Each bulb gets full voltage (V total = V1 = V2).",
+    "answerImg": ""
+  },
+  {
+    "question": "Define resistance and state its unit.",
+    "questionImg": "",
+    "answer": "Resistance opposes current flow; measured in ohms (Ω).",
+    "answerImg": ""
+  },
+  {
+    "question": "What happens to current if resistance doubles (voltage constant)?",
+    "questionImg": "",
+    "answer": "Current halves (Ohm’s Law: I = V / R).",
+    "answerImg": ""
+  },
+  {
+    "question": "A 12 V battery is connected to a 4 Ω resistor. Find the current.",
+    "questionImg": "",
+    "answer": "I = V / R = 12 V / 4 Ω = 3 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "A 0.5 A current flows through a resistor with 10 V across it. Calculate R.",
+    "questionImg": "",
+    "answer": "R = V / I = 10 V / 0.5 A = 20 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why do resistors heat up when current flows?",
+    "questionImg": "",
+    "answer": "Energy is converted to heat due to resistance (e.g., toasters).",
+    "answerImg": ""
+  },
+  {
+    "question": "How would you measure an unknown resistor’s value?",
+    "questionImg": "",
+    "answer": "Use an ohmmeter or apply Ohm’s Law (R = V / I) with a voltmeter and ammeter.",
+    "answerImg": ""
+  },
+  {
+    "question": "State Ohm’s Law formula and units.",
+    "questionImg": "",
+    "answer": "V = I × R; V (V), I (A), R (Ω).",
+    "answerImg": ""
+  },
+  {
+    "question": "What tool measures resistance?",
+    "questionImg": "",
+    "answer": "Ohmmeter/multimeter.",
+    "answerImg": ""
+  },
+  {
+    "question": "A 12 V battery is connected to a 3 Ω resistor. Find I.",
+    "questionImg": "",
+    "answer": "I = 12 V / 3 Ω = 4 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "A device draws 2 A at 10 V. What is its resistance?",
+    "questionImg": "",
+    "answer": "R = 10 V / 2 A = 5 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "A 4 Ω resistor is connected to a 20 V battery. Calculate the current.",
+    "questionImg": "",
+    "answer": "I = V / R = 20 V / 4 Ω = 5 A.",
+    "answerImg": ""
+  },
+  {
+    "question": "If 5 A flows through a wire with 20 V potential difference, how much energy is produced per second?",
+    "questionImg": "",
+    "answer": "5 C/s × 20 J/C = 100 J/s (or 100 W).",
+    "answerImg": ""
+  },
+  {
+    "question": "A wire carries 1.5 A at 9 V. Find its resistance.",
+    "questionImg": "",
+    "answer": "R = V / I = 9 V / 1.5 A = 6 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the current through each resistor?",
+    "questionImg": "",
+    "answer": "0.5 A (same for all series components).",
+    "answerImg": ""
+  },
+  {
+    "question": "Calculate total resistance for 50 Ω and 100 Ω resistors in series.",
+    "questionImg": "",
+    "answer": "R total = 50 Ω + 100 Ω = 150 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "In a series circuit, current flows from ______ to ______ potential.",
+    "questionImg": "",
+    "answer": "Higher (A) to lower (C).",
+    "answerImg": ""
+  },
+  {
+    "question": "In a series circuit with R1 = 50 Ω and R2 = 100 Ω, a current of 0.5 A flows. Calculate V AB (across R1).",
+    "questionImg": "",
+    "answer": "V AB = I × R1 = 0.5 A × 50 Ω = 25 V.",
+    "answerImg": ""
+  },
+  {
+    "question": "For the same circuit, calculate V AC (across both resistors).",
+    "questionImg": "",
+    "answer": "V AC = V AB + V BC = 25 V + 50 V = 75 V.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the total resistance R AC for R1 = 50 Ω and R2 = 100 Ω in series?",
+    "questionImg": "",
+    "answer": "R AC = R1 + R2 = 150 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "Two resistors (7 Ω and 10 Ω) are in parallel. Find R eq.",
+    "questionImg": "",
+    "answer": "1 / R eq = 1 / 7 + 1 / 10 = 17 / 70 ⟹ R eq = 70 / 17 ≈ 4.12 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "Calculate R eq for 1 Ω, 2 Ω, and 3 Ω in parallel.",
+    "questionImg": "",
+    "answer": "1 / R eq = 1 / 1 + 1 / 2 + 1 / 3 = 11 / 6 ⟹ R eq = 6 / 11 ≈ 0.55 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "In parallel circuits, how does the total current I relate to branch currents I1 and I2?",
+    "questionImg": "",
+    "answer": "I = I1 + I2.",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the voltage across each resistor in a parallel connection?",
+    "questionImg": "",
+    "answer": "Same as the source voltage (V AB).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does adding resistors in series increase total resistance?",
+    "questionImg": "",
+    "answer": "Current faces opposition from each resistor sequentially.",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does adding resistors in parallel decrease total resistance?",
+    "questionImg": "",
+    "answer": "Current has multiple paths, reducing overall opposition.",
+    "answerImg": ""
+  },
+  {
+    "question": "A 12 Ω resistor is connected to a 6 V battery. Calculate power using: a) P = V² / R b) P = IV (first find I).",
+    "questionImg": "",
+    "answer": "a) P = 6² / 12 = 3 W. b) I = V / R = 0.5 A; P = 0.5 × 6 = 3 W.",
+    "answerImg": ""
+  },
+  {
+    "question": "A heater uses 60 C of charge at 12 V in 10 s. Find its power.",
+    "questionImg": "",
+    "answer": "P = QV / t = 60 × 12 / 10 = 72 W.",
+    "answerImg": ""
+  },
+  {
+    "question": "A 5 A current flows through a 4 Ω resistor. Find power.",
+    "questionImg": "",
+    "answer": "P = I² R = 5² × 4 = 100 W.",
+    "answerImg": ""
+  },
+  {
+    "question": "Define electric power and state its unit.",
+    "questionImg": "",
+    "answer": "Power is energy transferred per second (W = J/s).",
+    "answerImg": ""
+  },
+  {
+    "question": "Why does a 100 W bulb glow brighter than a 60 W bulb?",
+    "questionImg": "",
+    "answer": "It converts more electrical energy to light/heat per second.",
+    "answerImg": ""
+  },
+  {
+    "question": "If voltage doubles in a circuit, how does power change?",
+    "questionImg": "",
+    "answer": "P = V² / R → Power quadruples (if R is constant).",
+    "answerImg": ""
+  },
+  {
+    "question": "A device operates at 120 V and consumes 1,800 W. Find: a) Current drawn. b) Resistance.",
+    "questionImg": "",
+    "answer": "a) I = P / V = 1800 / 120 = 15 A. b) R = V² / P = 120² / 1800 = 8 Ω.",
+    "answerImg": ""
+  },
+  {
+    "question": "Two bulbs (100 W and 60 W) are designed for 220 V. Which has higher resistance?",
+    "questionImg": "",
+    "answer": "R = V² / P → 60 W bulb has higher resistance (220² / 60 ≈ 806.7 Ω vs. 220² / 100 = 484 Ω).",
+    "answerImg": ""
+  },
+  {
+    "question": "What is the power if 2 A flows through a 3 Ω resistor?",
+    "questionImg": "",
+    "answer": "P = I² R = 2² × 3 = 12 W.",
+    "answerImg": ""
+  },
+  {
+    "question": "How is power related to voltage and current?",
+    "questionImg": "",
+    "answer": "P = IV.",
+    "answerImg": ""
+  },
+  {
+    "question": "what is the formula of power ????????",
+    "questionImg": "",
+    "answer": "P = W / t = IV = I² R = V² / R.",
+    "answerImg": ""
+   }, ],
     'human-body': [
       {
         "question": "What foods are mentioned as examples in the book?",
