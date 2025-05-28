@@ -1,4 +1,3 @@
-// Flashcard Database with Image Support
 const flashcardsDatabase = {
   'science': {
     'physics': [
@@ -20,7 +19,7 @@ const flashcardsDatabase = {
     "question": "Draw a simple circuit containing a battery, a wire, and a light bulb. Label all components.",
     "questionImg": "",
     "answer": "",
-    "answerImg": ".\images\Screenshot 2025-05-28 181658.png"
+    "answerImg": "./images/Screenshot 2025-05-28 181658.png"
   },
   {
     "question": "What is the voltage (potential difference) across a resistor of 5 Ω if the current flowing through it is 2 A?",
@@ -78,7 +77,7 @@ const flashcardsDatabase = {
   },
   {
     "question": "Identify whether the circuit is open or closed.",
-    "questionImg": ".\images\Diagram of a circuit with an open switch vs. closed switch.png",
+    "questionImg": "./images/Diagram of a circuit with an open switch vs. closed switch.png",
     "answer": "Left image (open switch): Open circuit (no current). Right image (closed switch): Closed circuit (current flows).",
     "answerImg": ""
   },
@@ -110,11 +109,11 @@ const flashcardsDatabase = {
     "question": "Draw and label the symbol for a single cell and a battery of three cells and compare/check your answer.",
     "questionImg": "",
     "answer": "Single cell: Long line (+) and short thick line (–). Battery: Two or more cell symbols connected in series (e.g., |––|––|––|).",
-    "answerImg": ".\images\a single cell and a battery of three cells with labels.png"
+    "answerImg": "./images/a single cell and a battery of three cells with labels.png"
   },
   {
     "question": "Identify the terminals (positive/negative) in the given cell symbol.",
-    "questionImg": ".\images\Cell symbol with long and short lines.png",
+    "questionImg": "./images/Cell symbol with long and short lines.png",
     "answer": "Long line = positive, short thick line = negative.",
     "answerImg": ""
   },
@@ -164,7 +163,7 @@ const flashcardsDatabase = {
     "question": "Draw the circuit symbols for an ammeter, voltmeter, and light bulb. and check/compare your answer.",
     "questionImg": "",
     "answer": "Ammeter: ⓐ Voltmeter: Ⓥ Bulb: Circle with \"X\" or filament.",
-    "answerImg": ".\images\circuit symbols for an ammeter, voltmeter, and light bulb.png"
+    "answerImg": "./images/circuit symbols for an ammeter, voltmeter, and light bulb.png"
   },
   {
     "question": "If an ammeter reads 2 A in a circuit, what does this indicate?",
@@ -212,11 +211,11 @@ const flashcardsDatabase = {
     "question": "Draw the symbols for a fixed resistor, variable resistor, and closed switch and compare/check your answer.",
     "questionImg": "",
     "answer": "Fixed resistor: Zigzag line (~~~~) or rectangle (▯). Variable resistor: Arrow through zigzag (~~/~). Closed switch: Straight line (no gap).",
-    "answerImg": ".\images\symbols.png"
+    "answerImg": "./images/symbols.png"
   },
   {
     "question": "Identify the resistor and switch in the circuit diagram.",
-    "questionImg": ".\images\Circuit with resistor and switch.png",
+    "questionImg": "./images/Circuit with resistor and switch.png",
     "answer": "Resistor: ~~~~ or ▯. Switch: Gap (open) or line (closed).",
     "answerImg": ""
   },
@@ -254,7 +253,7 @@ const flashcardsDatabase = {
     "question": "Draw and label the symbols for a cell, battery, and filament lamp.",
     "questionImg": "",
     "answer": "Cell: |– Battery: |––|––| Lamp: ⨀ or circle with \"X\".",
-    "answerImg": ".\images\Screenshot 2025-05-28 181658.png"
+    "answerImg": "./images/Screenshot 2025-05-28 181658.png"
   },
   {
     "question": "Why is a voltmeter connected in parallel, while an ammeter is in series?",
@@ -312,7 +311,7 @@ const flashcardsDatabase = {
   },
   {
     "question": "Label the higher and lower potential terminals in the battery symbol.",
-    "questionImg": ".\images\Cell symbol with long and short lines.png",
+    "questionImg": "./images/Cell symbol with long and short lines.png",
     "answer": "Long line: Higher potential (+). Short line: Lower potential (–).",
     "answerImg": ""
   },
@@ -344,7 +343,7 @@ const flashcardsDatabase = {
     "question": "Draw how to measure a battery’s voltage.",
     "questionImg": "",
     "answer": "[Battery +] —— [Ⓥ +] [Battery –] —— [Ⓥ –]",
-    "answerImg": ".\images\measure voltage.png"
+    "answerImg": "./images/measure voltage.png"
   },
   {
     "question": "A voltmeter reads 0 V in a working circuit. Explain why.",
