@@ -613,6 +613,82 @@
   justify-content: center;
   margin: 20px 0;
 }
+
+.notes-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.notes-btn:hover {
+  transform: scale(1.1);
+}
+
+.notes-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.notes-content {
+  background: var(--card-bg);
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.notes-header h2 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.notes-area {
+  flex: 1;
+  resize: none;
+  padding: 15px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.notes-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.mobile-view .notes-content {
+  width: 95%;
+  height: 90vh;
+}
   </style>
 </head>
 <body class="subject-science">
@@ -678,21 +754,20 @@
       <div class="subject-info">
         <h2>Science</h2>
         <div class="topic-list">
-          <div class="topic" onclick="enterFlashcardMode('science', 'physics')">
-            <span>Physics</span>
-            <span class="topic-time" data-subject="science" data-topic="physics"></span>
+          <div class="topic">
+            <span onclick="enterFlashcardMode('science', 'physics')">Physics</span>
+            <button class="notes-btn" onclick="openNotes('physics', event)">📝</button>
           </div>
-          <div class="topic" onclick="enterFlashcardMode('science', 'human-body')">
-            Human Body
-            <span class="study-time-badge"></span>
+          <div class="topic">
+            <span onclick="enterFlashcardMode('science', 'human-body')">Human Body</span>
+            <button class="notes-btn" onclick="openNotes('human-body', event)">📝</button>
           </div>
-          <div class="topic" onclick="enterFlashcardMode('science', 'chemistry')">
-            Chemistry
-            <span class="study-time-badge"></span>
+          <div class="topic">
+            <span onclick="enterFlashcardMode('science', 'chemistry')">Chemistry</span>
+            <button class="notes-btn" onclick="openNotes('chemistry', event)">📝</button>
           </div>
         </div>
       </div>
-      <div class="study-time-badge"></div>
     </div>
     
     <div class="subject-card" onclick="toggleSubject(this, 'math')">
@@ -705,6 +780,7 @@
     
     <div class="subject-card direct-subject" onclick="enterFlashcardMode('social-studies', 'social-studies')">
       <h2>Social Studies</h2>
+      <button class="notes-btn" onclick="openNotes('social-studies', event)">📝</button>
     </div>
     
     <div class="subject-card direct-subject" onclick="enterFlashcardMode('computing', 'computing')">
@@ -781,7 +857,21 @@
     </div>
   </div>
 
+  <div class="notes-modal" id="notesModal">
+  <div class="notes-content">
+    <div class="notes-header">
+      <h2 id="notesTitle">Notes</h2>
+      <button class="close-btn" onclick="closeNotes()">✖️</button>
+    </div>
+    <textarea id="notesArea" class="notes-area" placeholder="Write your notes here..."></textarea>
+    <div class="notes-controls">
+      <button class="save-btn" onclick="saveNotes(event)">💾 Save Notes</button>
+    </div>
+  </div>
+</div>
+  
   <script src="flashcards.js"></script>
+  
   <script>
     let currentMode = 'dashboard';
     let currentSubject = '';
@@ -807,6 +897,9 @@
     const emptyMessageEl = document.getElementById('emptyMessage');
     const controlsEl = document.querySelector('.controls');
     const flashcardContainerEl = document.querySelector('.flashcard-container');
+
+    let currentNotesTopic = '';
+    const notesDatabase = JSON.parse(localStorage.getItem('studyNotes')) || {};
 
     function toggleSubject(element, subject, event) {
       if (event) event.stopPropagation();
@@ -1335,6 +1428,59 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('mobile-view');
     document.getElementById('mobileIcon').textContent = '💻';
     toggleMobileView();
+  }
+});
+
+
+function openNotes(topic, event) {
+  if (event) {
+    event.stopPropagation();
+  }
+  
+  currentNotesTopic = topic;
+  const modal = document.getElementById('notesModal');
+  const notesArea = document.getElementById('notesArea');
+  const notesTitle = document.getElementById('notesTitle');
+  
+  // Set title based on topic
+  const topicNames = {
+    'physics': 'Physics Notes',
+    'human-body': 'Human Body Notes',
+    'chemistry': 'Chemistry Notes',
+    'social-studies': 'Social Studies Notes'
+  };
+  
+  notesTitle.textContent = topicNames[topic] || 'Notes';
+  
+  // Load saved notes
+  notesArea.value = notesDatabase[topic] || '';
+  
+  modal.style.display = 'flex';
+}
+
+function closeNotes() {
+  const modal = document.getElementById('notesModal');
+  modal.style.display = 'none';
+}
+
+function saveNotes(event) {
+  const notesArea = document.getElementById('notesArea');
+  notesDatabase[currentNotesTopic] = notesArea.value;
+  localStorage.setItem('studyNotes', JSON.stringify(notesDatabase));
+  
+  // Show save confirmation
+  const saveBtn = event.target;
+  const originalText = saveBtn.textContent;
+  saveBtn.textContent = '✓ Saved!';
+  setTimeout(() => {
+    saveBtn.textContent = originalText;
+  }, 1500);
+}
+
+// Add this event listener to close notes when clicking outside
+document.getElementById('notesModal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    closeNotes();
   }
 });
   </script>
