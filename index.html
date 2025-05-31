@@ -525,13 +525,14 @@
     }
 
     .card-jumper {
-      position: fixed;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
+      position: static;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
       display: flex;
       gap: 10px;
       align-items: center;
+      justify-content: center;
       background: var(--card-bg);
       padding: 15px;
       border-radius: 15px;
@@ -813,11 +814,6 @@
   <button onclick="nextCard()">Next →</button>
 </div>
     
-    <div class="card-jumper">
-      <input type="number" id="jumpInput" min="1" placeholder="Jump to card...">
-      <button onclick="jumpToCard()">Go</button>
-    </div>
-    
     <div class="flashcard-container">
       <div class="flashcard" onclick="flipCard()">
         <div class="flashcard-front">
@@ -835,6 +831,11 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <div class="card-jumper">
+      <input type="number" id="jumpInput" min="1" placeholder="Jump to card...">
+      <button onclick="jumpToCard()">Go</button>
     </div>
     
     <div id="emptyMessage" class="empty-message">
@@ -1475,6 +1476,24 @@ function saveNotes(event) {
   setTimeout(() => {
     saveBtn.textContent = originalText;
   }, 1500);
+}
+
+// Add this function to your existing JavaScript
+function jumpToCard() {
+  const input = document.getElementById('jumpInput');
+  const cardNumber = parseInt(input.value);
+  
+  if (cardNumber && cardNumber > 0 && cardNumber <= filteredCards.length) {
+    currentCardIndex = cardNumber - 1;
+    updateCardView();
+    input.value = '';
+  } else {
+    // Show error if invalid number
+    input.style.borderColor = 'var(--wrong)';
+    setTimeout(() => {
+      input.style.borderColor = 'var(--primary)';
+    }, 1000);
+  }
 }
 
 // Add this event listener to close notes when clicking outside
