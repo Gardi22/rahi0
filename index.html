@@ -1379,34 +1379,70 @@ function toggleMobileView(fromWelcome = false) {
   document.body.classList.toggle('mobile-view');
 
   if (isMobileView) {
+    // Mobile optimizations
+    document.documentElement.style.zoom = "0.85";
+    document.querySelector('.clock-container').style.transform = 'scale(0.5)';
+    document.querySelector('.flashcard-container').style.width = '95%';
+    document.querySelector('.flashcard').style.height = '400px';
+    document.querySelector('.timer-container').style.padding = '5px 10px';
+    document.querySelector('.timer').style.fontSize = '1.8rem';
     
-    document.documentElement.style.zoom = "0.9";
-    document.querySelector('.clock-container').style.transform = 'scale(0.6)';
-    document.querySelector('.flashcard-container').style.width = '100%';
-    document.querySelector('.timer-container').classList.add('mobile-timer');
+    // Stack controls vertically and optimize for touch
+    const controls = document.querySelector('.controls');
+    if (controls) {
+      controls.style.flexDirection = 'column';
+      controls.style.gap = '8px';
+    }
     
-   
+    // Optimize buttons for mobile
     document.querySelectorAll('button').forEach(btn => {
-      btn.style.padding = '12px';
-      btn.style.fontSize = '1rem';
+      btn.style.padding = '12px 20px';
+      btn.style.fontSize = '1.1rem';
+      btn.style.minHeight = '44px'; // Better touch targets
     });
+
+    // Adjust card jumper for mobile
+    const cardJumper = document.querySelector('.card-jumper');
+    if (cardJumper) {
+      cardJumper.style.width = '90%';
+      cardJumper.style.margin = '10px auto';
+    }
   } else {
-    
+    // Reset to desktop view
     document.documentElement.style.zoom = "1";
     document.querySelector('.clock-container').style.transform = 'scale(0.85)';
     document.querySelector('.flashcard-container').style.width = 'calc(100% - 250px)';
-    document.querySelector('.timer-container').classList.remove('mobile-timer');
+    document.querySelector('.flashcard').style.height = '500px';
+    document.querySelector('.timer-container').style.padding = '10px';
+    document.querySelector('.timer').style.fontSize = '2.4rem';
     
+    // Reset controls
+    const controls = document.querySelector('.controls');
+    if (controls) {
+      controls.style.flexDirection = 'row';
+      controls.style.gap = '15px';
+    }
     
+    // Reset buttons
     document.querySelectorAll('button').forEach(btn => {
       btn.style.padding = '10px 20px';
       btn.style.fontSize = '1rem';
+      btn.style.minHeight = 'auto';
     });
+
+    // Reset card jumper
+    const cardJumper = document.querySelector('.card-jumper');
+    if (cardJumper) {
+      cardJumper.style.width = '300px';
+      cardJumper.style.margin = '20px auto';
+    }
   }
 
+  // Update icon and save preference
   document.getElementById('mobileIcon').textContent = isMobileView ? '💻' : '📱';
   localStorage.setItem('mobileView', isMobileView);
 
+  // Refresh card view if in flashcard mode
   if (currentMode === 'flashcard') {
     updateCardView();
   }
